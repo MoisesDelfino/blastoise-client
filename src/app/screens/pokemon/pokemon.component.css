@@ -1,0 +1,89 @@
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.container {
+  padding: 23px;
+  max-width: 1047px;
+  width: 100%;
+  margin-top: 44px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.header {
+  width: 100%;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+
+  flex-direction: row;
+}
+
+.form {
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+.imgAsh {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 60px;
+}
+
+img {
+  width: 260px;
+height: 248px;
+}
+
+.div-button {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #D7C450;
+  color: white;
+  padding: 13px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FC0605;
+  color: white;
+  padding: 13px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  opacity: 0.7;
+}
+
+.button:hover {
+  opacity: 0.7;
+  transition: 0.25s;
+}
