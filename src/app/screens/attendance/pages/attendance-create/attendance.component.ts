@@ -1,17 +1,12 @@
-// import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
+@Component({
+  selector: 'app-attendance',
+  templateUrl: './attendance.component.html',
+  styleUrls: ['./attendance.component.css'],
+})
+export class AttendanceComponent implements OnInit {
+  constructor() {}
 
-
-// @Component({
-//   selector: 'app-attendance',
-//   templateUrl: './attendance.component.html',
-//   styleUrls: ['./attendance.component.css']
-// })
-// export class AttendanceComponent implements OnInit {
-
-//   constructor() { }
-
-//   ngOnInit(): void {
-//   }
-
-// }
+  ngOnInit(): void {}
+}
