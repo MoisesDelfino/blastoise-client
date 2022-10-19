@@ -46,8 +46,10 @@
 }
 
 img {
-  width: 317px;
-  height: 127px;
+  width: 260px;
+  height: 205px;
+  padding-left: 50px;
+  padding-bottom: 15px;
 }
 
 .div-button {

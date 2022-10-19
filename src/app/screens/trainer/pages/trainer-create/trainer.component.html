@@ -1,3 +1,5 @@
+
+
 <div class="body">
   <div class="container">
     <div class="header">
@@ -7,11 +9,11 @@
       <div class="form">
         <label>
           Nome completo
-          <input type="text" placeholder="Ex.: Ash da Silva">
+          <input type="text" placeholder="Ex.: Ash da Silva" [(ngModel)]="trainer.nome">
         </label>
-        <label>
+        <label for="classificao">
           Classificação
-          <select>
+          <select [(ngModel)]="trainer.classificacao">
             <option  selected="selected" disabled hidden>
               Selecione...
             </option>
@@ -26,20 +28,22 @@
             </option>
           </select>
         </label>
-        <label>
+        <label for="genero">
           Gênero
-          <select>
-            <option selected="selected" disabled hidden>Selecione...</option>
-            <option>Masculino</option>
-            <option>Feminino</option>
+          <select [(ngModel)]="trainer.genero">
+            
+            <option hidden value="" disabled selected>Selecione...</option>
+            <option value="M">Masculino</option>
+            <option value="F">Feminino</option>
+            <option value="O">Outros</option>
           </select>
         </label>
-        <label>
+        <label for="nascimento">
           Data de nascimento
-          <input type="date">
+          <input type="date" [(ngModel)]="trainer.nascimento">
         </label>
         <div class="div-button">
-          <div class="button">Cadastrar</div>
+          <div class="button" (click)="salvarController()">Cadastrar</div>
           <div class="cancel-button">Cancelar</div>
         </div>
       </div>
