@@ -10,6 +10,6 @@ export class TrainerService {
   constructor(private httpClient: HttpClient) { }
 
   salvarService(trainer: TrainerDetalhado): Promise<TrainerDetalhado | any> {
-    return this.httpClient.post<TrainerDetalhado>('http://localhost:8080/api/trainer/', trainer).toPromise();
+    return this.httpClient.post<TrainerDetalhado>('http://localhost:8080/api/treinador/', trainer).toPromise();
   }
 }

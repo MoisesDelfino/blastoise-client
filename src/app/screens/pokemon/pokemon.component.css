@@ -9,8 +9,9 @@
 .container {
   padding: 23px;
   max-width: 1047px;
+  max-height: 600px;
   width: 100%;
-  margin-top: 44px;
+  margin-top: 34px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -35,7 +36,12 @@
   gap: 12px;
   display: flex;
   flex-direction: column;
-  padding-top: 30px;
+  padding-top: 15px;
+}
+
+.form-rw {
+  display: flex;
+  flex-direction: row;
 }
 
 .imgAsh {
@@ -46,15 +52,16 @@
 }
 
 img {
-  width: 260px;
-height: 248px;
+  width: 280px;
+  height: 102px;
+  margin-left: 50px;
 }
 
 .div-button {
   display: flex;
   gap: 12px;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 .button {
@@ -86,4 +93,14 @@ height: 248px;
 .button:hover {
   opacity: 0.7;
   transition: 0.25s;
+}
+
+input {
+  width: 450px;
+  margin: 15px;
+}
+
+select {
+  width: 500px;
+  margin: 15px;
 }
