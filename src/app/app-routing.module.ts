@@ -3,7 +3,7 @@ import { RouterModule, RouterOutlet, Routes } from '@angular/router';
 import { TrainerComponent } from './screens/trainer/pages/trainer-create/trainer.component';
 import { AttendanceComponent } from './screens/attendance/pages/attendance-create/attendance.component';
 import { QueueComponent } from './screens/queue/queue.component';
-import { PokemonComponent } from './screens/pokemon/pokemon.component';
+import { PokemonComponent } from './screens/pokemon/pages/pokemon.component';
 import { RecordsComponent } from './screens/records/records.component';
 
 const routes: Routes = [
