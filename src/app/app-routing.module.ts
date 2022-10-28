@@ -8,8 +8,7 @@ import { RecordsComponent } from './screens/records/records.component';
 
 const routes: Routes = [
   {
-    path: 'trainer',
-    component: TrainerComponent,
+    path: 'trainer', component: TrainerComponent,
   },
 
   { path: 'attendance', component: AttendanceComponent },

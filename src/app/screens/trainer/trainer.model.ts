@@ -4,5 +4,4 @@ export interface TrainerDetalhado {
   classificacao: number;
   genero: number;
   nascimento: Date;
-} 
-
+}

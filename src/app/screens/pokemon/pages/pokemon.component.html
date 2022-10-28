@@ -8,33 +8,33 @@
         <div class="form-rw">
           <label>
             Nome
-            <input type="text" placeholder="Ex.: Ash da Silva" />
+            <input type="text" placeholder="Ex.: Ash da Silva" [(ngModel)]="pokemon.nome"/>
           </label>
           <label>
             Saúde
-            <input placeholder="Ex: 50%" type="text" />
+            <input placeholder="Ex: 50%" type="text" [(ngModel)]="pokemon.saude"/>
           </label>
         </div>
 
         <div class="form-rw">
           <label>
             Ataque
-            <input placeholder="Ex: 60%" type="text" />
+            <input placeholder="Ex: 60%" type="text" [(ngModel)]="pokemon.ataque"/>
           </label>
           <label>
             Defesa
-            <input placeholder="Ex: 40%" type="text" />
+            <input placeholder="Ex: 40%" type="text" [(ngModel)]="pokemon.defesa"/>
           </label>
         </div>
 
         <div class="form-rw">
           <label>
             Velocidade
-            <input placeholder="Ex: 30%" type="text" />
+            <input placeholder="Ex: 30%" type="text" [(ngModel)]="pokemon.velocidade"/>
           </label>
           <label>
             Gênero
-            <select>
+            <select [(ngModel)]="pokemon.genero">
               <option selected="selected" disabled hidden>Selecione...</option>
               <option>Masculino</option>
               <option>Feminino</option>
@@ -47,7 +47,7 @@
             Treinador
             <select>
               <option selected="selected" disabled hidden>Selecione...</option>
-              <option>Listar treinadores</option>
+              <option  *ngFor="let trainer of trainers.conteudo" [value]="trainer.id">{{ trainer.nome }}</option>
             </select>
           </label>
           <div class="imgAsh">
