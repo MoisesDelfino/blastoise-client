@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Ipokemon } from '../pokemon.model';
+import { Ipokemon, ITrainer } from '../pokemon.model';
 import { PokemonService } from '../services/pokemon.service';
 
 @Component({
@@ -9,14 +9,25 @@ import { PokemonService } from '../services/pokemon.service';
 })
 export class PokemonComponent implements OnInit {
   public pokemon = {} as Ipokemon;
+  public trainers = {} as ITrainer;
+  public trainer = this.trainers.conteudo;
 
-  constructor(private pokemonService: PokemonService) {}
+  constructor(private pokemonService: PokemonService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.buscarTreinadores();
+  }
 
   salvarController() {
     this.pokemonService.salvarService(this.pokemon).then((res) => {
       this.pokemon = {} as Ipokemon;
     });
   }
+
+  buscarTreinadores() {
+    this.pokemonService.listarTrainerService().then(res => {
+      this.trainers = res;
+    })
+  }
+
 }

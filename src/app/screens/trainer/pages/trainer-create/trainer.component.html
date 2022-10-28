@@ -16,18 +16,30 @@
         <label for="classificao">
           Classificação
           <select [(ngModel)]="trainer.classificacao">
-            <option value="0" selected="selected" disabled hidden>
+            <option hidden value=0 disabled selected>
               Selecione...
             </option>
-            <option>Select 1</option>
-            <option>Select 2</option>
-            <option>Select 3</option>
+            <option value="TP">Treinador pokemon</option>
+            <option value="LG">Líder de ginásio</option>
+            <option value="CPR">Capitão de prova</option>
+            <option value="K">Kahuna</option>
+            <option value="EQ">Elite quatro</option>
+            <option value="CLG">Campeão da liga pokemon</option>
+            <option value="CPK">Coordenador pokemon</option>
+            <option value="CP">Criador pokemon</option>
+            <option value="E">Estilista</option>
+            <option value="P">Performer</option>
+            <option value="EP">Especialísta Pokemon</option>
+            <option value="SH">Shiny hunter</option>
+            <option value="PA">Patrulheiro</option>
+            <option value="OP">Observador pokemon</option>
+            <option value="C">Caçador</option>
           </select>
         </label>
         <label for="genero">
           Gênero
-          <select [(ngModel)]="trainer.genero">
-            <option hidden value="" disabled selected>Selecione...</option>
+          <select>
+            <option hidden value=0 disabled selected>Selecione...</option>
             <option value="M">Masculino</option>
             <option value="F">Feminino</option>
             <option value="O">Outros</option>
