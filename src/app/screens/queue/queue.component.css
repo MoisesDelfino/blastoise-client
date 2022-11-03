@@ -1,0 +1,113 @@
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.container {
+  padding: 23px;
+  max-width: 1047px;
+  width: 100%;
+  margin-top: 22px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.header {
+  width: 100%;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 6px;
+
+}
+
+.row {
+  /* margin-top: 4px; */
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-left: 62px;
+  border-bottom: 1px solid #B0B0B0;
+}
+
+.arrival {
+  /* border: 1px solid blue; */
+  max-width: 100px;
+  width: 100%;
+}
+
+.pokemon {
+  /* border: 1px solid yellow; */
+  width: 100%;
+  max-width: 160px;
+}
+
+.symptoms {
+  /* border: 1px solid orange; */
+  width: 100%;
+  max-width: 202px;
+}
+
+.trainer {
+  /* border: 1px solid pink; */
+  width: 100%;
+  max-width: 160px;
+}
+.health {
+  /* border: 1px solid rgb(41, 156, 158); */
+  width: 100%;
+  max-width: 90px;
+}
+
+.statusTitle {
+  /* border: 1px solid blueviolet; */
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+  width: 100%;
+  max-width: 110px;
+
+}
+
+.status {
+  /* border: 1px solid blueviolet; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  width: 100%;
+  max-width: 110px;
+
+}
+
+
+
+.urgency {
+  /* border: 1px solid green; */
+  width: 100%;
+  max-width: 100px;
+}
+
+.child {
+  font-size: 12px;
+}
+
+
+img:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.25s;
+}
