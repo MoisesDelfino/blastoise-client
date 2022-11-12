@@ -35,9 +35,9 @@
           <label>
             Gênero
             <select [(ngModel)]="pokemon.genero">
-              <option selected="selected" disabled hidden>Selecione...</option>
-              <option>Masculino</option>
-              <option>Feminino</option>
+              <option hidden value="" disabled selected>Selecione...</option>
+              <option value="M">Masculino</option>
+              <option value="F">Feminino</option>
             </select>
           </label>
         </div>
@@ -45,19 +45,29 @@
         <div class="form-rw">
           <label>
             Treinador
-            <select>
-              <option selected="selected" disabled hidden>Selecione...</option>
+            <select [(ngModel)]="pokemon.treinador">
+              <option hidden value=0 disabled selected>Selecione...</option>
               <option  *ngFor="let trainer of trainers.conteudo" [value]="trainer.id">{{ trainer.nome }}</option>
             </select>
           </label>
+          <label>
+            tipo
+            <select [(ngModel)]="pokemon.tiposPokemonList" multiple>
+              <option hidden value=0 disabled selected>Selecione...</option>
+              <option  *ngFor="let tipos of tipo.conteudo" [value]="tipos.id">{{ tipos.nome }}</option>
+            </select>
+          </label>
+        </div>
+        <div class="buttons">
+          <div class="div-button">
+            <div class="button" (click)="salvarController()">Salvar</div>
+            <div class="cancel-button">Cancelar</div>
+          </div>
           <div class="imgAsh">
             <img src="../../../../../assets/images/attendance.png" />
           </div>
         </div>
-        <div class="div-button">
-          <div class="button">Salvar</div>
-          <div class="cancel-button">Cancelar</div>
-        </div>
+        
       </div>
     </div>
   </div>
