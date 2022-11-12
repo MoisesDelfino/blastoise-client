@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TrainerModule } from './screens/trainer/trainer.module';
 import { PokemonModule } from './screens/pokemon/pokemon.module';
 import { CommonModule } from '@angular/common';
+import { AttendanceModule } from './screens/attendance/attendance.module';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent],
@@ -18,7 +19,8 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     TrainerModule,
     PokemonModule,
-    CommonModule
+    CommonModule,
+    AttendanceModule
   ],
   providers: [],
   bootstrap: [AppComponent],

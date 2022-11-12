@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Select2Module } from 'ng-select2-component';
 import { PokemonComponent } from './pages/pokemon.component';
+import { MultiSelectAllModule } from '@syncfusion/ej2-angular-dropdowns';
+
 
 @NgModule({
   declarations: [PokemonComponent],
-  imports: [FormsModule, CommonModule, Select2Module],
+  imports: [FormsModule, CommonModule, MultiSelectAllModule],
 })
 export class PokemonModule {}

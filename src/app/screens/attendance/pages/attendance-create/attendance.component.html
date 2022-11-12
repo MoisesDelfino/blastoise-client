@@ -7,33 +7,34 @@
       <div class="form">
         <label>
           Treinador
-          <input type="text" placeholder="Ex.: Ash da Silva" />
+          <select (ngModelChange)="buscaPokemons($event)" [(ngModel)]="attendance.treinador">
+            <option hidden value=0 disabled selected>Selecione...</option>
+            <option  *ngFor="let trainer of trainers.conteudo" [value]="trainer.id">{{ trainer.nome }}</option>
+          </select>
         </label>
         <label>
           Pokemon
-          <select>
-            <option selected="selected" disabled hidden>Selecione...</option>
-            <option>pokemon 1</option>
-            <option>pokemon 2</option>
-            <option>pokemon 3</option>
+          <select [disabled]="attendance.treinador == 0" [(ngModel)]="attendance.pokemon">
+            <option hidden value=0 disabled selected>Selecione...</option>
+            <option  *ngFor="let pokemon of pokemons" [value]="pokemon.id">{{ pokemon.nome }}</option>
           </select>
         </label>
         <label>
           Sintoma
-          <input placeholder="Ex: Fraqueza, tontura sei lá" type="text" />
+          <input placeholder="Ex: Fraqueza, tontura sei lá" type="text" [(ngModel)]="attendance.sintomas"/>
         </label>
         <label>
           Urgência
-          <select>
-            <option selected="selected" disabled hidden>Selecione...</option>
-            <option>Baixa</option>
-            <option>Média</option>
-            <option>Alta</option>
+          <select [(ngModel)]="attendance.urgencia">
+            <option value=0 selected="selected" disabled hidden>Selecione...</option>
+            <option value=1>Baixa</option>
+            <option value=2>Média</option>
+            <option value=3>Alta</option>
           </select>
         </label>
 
         <div class="div-button">
-          <div class="button">Salvar</div>
+          <div class="button" (click)="salvarController()">Salvar</div>
           <div class="cancel-button">Cancelar</div>
         </div>
       </div>

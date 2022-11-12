@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Ipokemon } from '../pokemon.model';
 import { TrainerDetalhado } from '../../trainer/trainer.model';
 
@@ -12,7 +12,7 @@ export class PokemonService {
   salvarService(pokemon: Ipokemon): Promise<Ipokemon | any> {
     return this.httpClient
       .post<Ipokemon>(
-        'http://localhost:8080/api/treinador/${idTreinador}/pokemon/',
+        `http://localhost:8080/api/treinador/${pokemon.treinador}/pokemon/`,
         pokemon
       )
       .toPromise();
@@ -20,5 +20,9 @@ export class PokemonService {
 
   listarTrainerService():Promise<any> {
     return this.httpClient.get<TrainerDetalhado>(`http://localhost:8080/api/treinador/?status=A`).toPromise();
+  }
+
+  listarTipoService():Promise<any> {
+    return this.httpClient.get<TrainerDetalhado>(`http://localhost:8080/api/tipo/`).toPromise();
   }
 }
