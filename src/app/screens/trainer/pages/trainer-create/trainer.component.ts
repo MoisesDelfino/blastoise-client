@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TrainerService } from '../../services/trainer.service';
 import { TrainerDetalhado } from '../../trainer.model';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-trainer',
@@ -11,7 +12,7 @@ import { TrainerDetalhado } from '../../trainer.model';
 export class TrainerComponent implements OnInit {
   trainer = {} as TrainerDetalhado;
 
-  constructor(private trainerService: TrainerService, private router: Router) { }
+  constructor(private trainerService: TrainerService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.trainer.classificacao = 0;
@@ -20,10 +21,10 @@ export class TrainerComponent implements OnInit {
 
   salvarController() {
     this.trainerService.salvarService(this.trainer).then((result) => {
-      console.log(`Treinador ${result?.nome} cadastrado com sucesso.`);
+      this.toastr.success('Treinador cadastrado!', 'Sucesso!');
       this.trainer = {} as TrainerDetalhado;
-      
-      //COLOCAR AQUI A NAVEGAÇÃO PARA A LISTA this.router.navigate(['trainer/list']);
+    }).catch(error => {
+      this.toastr.error('Não foi possível cadastrar o treinador. Erro: ' + error, 'Erro')
     });
   }
 }
