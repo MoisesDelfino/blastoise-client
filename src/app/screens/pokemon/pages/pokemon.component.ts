@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Ipokemon, ITipoPokemon, ITrainer } from '../pokemon.model';
 import { PokemonService } from '../services/pokemon.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-pokemon',
@@ -12,7 +13,7 @@ export class PokemonComponent implements OnInit {
   public trainers = {} as ITrainer;
   public tipo = {} as ITipoPokemon;
 
-  constructor(private pokemonService: PokemonService) { }
+  constructor(private pokemonService: PokemonService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.buscarTreinadores();
@@ -24,8 +25,10 @@ export class PokemonComponent implements OnInit {
 
   salvarController() {
     this.pokemonService.salvarService(this.pokemon).then((res) => {
-      console.log(`Pokemon ${res?.nome} cadastrado com sucesso.`);
+      this.toastr.success('Pokemon cadastrado!', 'Sucesso!');
       this.pokemon = {} as Ipokemon;
+    }).catch(error => {
+      this.toastr.error('Não foi possível cadastrar o pokemon. Erro: ' + error, 'Erro')
     });
   }
 

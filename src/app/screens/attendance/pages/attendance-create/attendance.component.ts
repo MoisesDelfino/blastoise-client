@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Ipokemon, Ipokemons, ITrainer } from 'src/app/screens/pokemon/pokemon.model';
 import { IAttendance } from '../../attendance.model';
 import { AttendanceService } from '../../services/attendance.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-attendance',
@@ -14,7 +15,7 @@ export class AttendanceComponent implements OnInit {
   public pokemon = {} as Ipokemons;
   public pokemons = this.pokemon.conteudo;
 
-  constructor(private attendanceService: AttendanceService) { }
+  constructor(private attendanceService: AttendanceService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.buscarTreinadores();
@@ -25,7 +26,10 @@ export class AttendanceComponent implements OnInit {
 
   salvarController() {
     this.attendanceService.salvarService(this.attendance).then((res) => {
+      this.toastr.success('Atendimento cadastrado!', 'Sucesso!');
       this.attendance = {} as IAttendance;
+    }).catch(error => {
+      this.toastr.error('Não foi possível cadastrar o atendimento. Erro: ' + error, 'Erro')
     });
   }
 

@@ -9,6 +9,7 @@ import { TrainerModule } from './screens/trainer/trainer.module';
 import { PokemonModule } from './screens/pokemon/pokemon.module';
 import { CommonModule } from '@angular/common';
 import { AttendanceModule } from './screens/attendance/attendance.module';
+import { ToastNoAnimationModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent],
@@ -20,7 +21,8 @@ import { AttendanceModule } from './screens/attendance/attendance.module';
     TrainerModule,
     PokemonModule,
     CommonModule,
-    AttendanceModule
+    AttendanceModule,
+    ToastNoAnimationModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],
